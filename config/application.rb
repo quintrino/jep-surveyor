@@ -1,4 +1,4 @@
-require_relative 'boot'
+require_relative "boot"
 
 # frozen_string_literal: true
 
@@ -11,10 +11,9 @@ require "rails"
   rails/test_unit/railtie
   sprockets/railtie
 ).each do |railtie|
-  begin
-    require railtie
-  rescue LoadError
-  end
+
+  require railtie
+rescue LoadError
 end
 
 

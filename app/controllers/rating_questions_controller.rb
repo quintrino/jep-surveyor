@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RatingQuestionsController < ApplicationController
   def index
     @rating_questions = RatingQuestion.all
@@ -13,12 +15,11 @@ class RatingQuestionsController < ApplicationController
       # flash[:notice] = "Your question has been created."
       redirect_to "/", notice: "Your question has been created."
     end
-
   end
 
   private
 
-  def question_params
-    params.require(:rating_question).permit(:title)
-  end
+    def question_params
+      params.require(:rating_question).permit(:title)
+    end
 end
