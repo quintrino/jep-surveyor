@@ -8,7 +8,7 @@ RSpec.describe "POST /ratingQuestions" do
 
   context "when the request has a body" do
     before do
-      post "/ratingQuestions.json", params: { title: new_title, tag: new_tag }
+      post "/rating_questions.json", params: { rating_question: { title: new_title, tag: new_tag } }
     end
 
     it "returns a 201 Created" do
@@ -16,7 +16,7 @@ RSpec.describe "POST /ratingQuestions" do
     end
 
     it "returns the new document" do
-      question = response.parse
+      question = JSON.parse(response.body)
       expect(question.is_a?(Hash)).to eq(true)
       expect(question.key?("id")).to eq(true)
       expect(question["title"]).to eq(new_title)
