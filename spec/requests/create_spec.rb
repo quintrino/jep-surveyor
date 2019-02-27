@@ -14,7 +14,7 @@ RSpec.describe "POST /ratingQuestions" do
     it "returns a 201 Created" do
       expect(response.status).to eq(201)
     end
-
+    
     it "returns the new document" do
       question = JSON.parse(response.body)
       expect(question.is_a?(Hash)).to eq(true)

@@ -5,4 +5,5 @@ class RatingQuestion
   include Mongoid::Timestamps
 
   field :title, type: String
+  field :tag, type: String
 end
